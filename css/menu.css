@@ -1,0 +1,350 @@
+/* =============================================
+   MOCHA CAFE – Menu Page CSS (Updated with real images)
+============================================= */
+
+/* ---- Menu Page Hero ---- */
+.menu-page-hero {
+    min-height: 40vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1A0E08, #2D1A0F, #4A2C1A);
+}
+
+.menu-page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 70%, rgba(201, 169, 110, 0.12) 0%, transparent 60%);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(245, 237, 216, 0.5);
+    margin-bottom: 16px;
+}
+
+.breadcrumb a {
+    color: rgba(245, 237, 216, 0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #C9A96E;
+}
+
+.breadcrumb-sep {
+    color: rgba(201, 169, 110, 0.4);
+}
+
+/* ---- Category Tabs ---- */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px 16px;
+    position: sticky;
+    top: 72px;
+    z-index: 40;
+    background: rgba(26, 14, 8, 0.94);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.cat-tab {
+    padding: 9px 20px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(201, 169, 110, 0.25);
+    background: transparent;
+    color: rgba(245, 237, 216, 0.6);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.cat-tab:hover {
+    border-color: rgba(201, 169, 110, 0.5);
+    color: #C9A96E;
+    background: rgba(201, 169, 110, 0.08);
+}
+
+.cat-tab.active {
+    background: linear-gradient(135deg, #C9A96E, #E8C97A);
+    color: #1A0E08;
+    border-color: transparent;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(201, 169, 110, 0.3);
+}
+
+.cat-tab i {
+    font-size: 0.78rem;
+}
+
+/* ---- Menu Grid ---- */
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* =========================================
+   ITEM CARD
+========================================= */
+.item-card {
+    background: rgba(45, 26, 15, 0.65);
+    border: 1px solid rgba(201, 169, 110, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(8px);
+    animation: fadeInUp 0.5s ease both;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(201, 169, 110, 0.25);
+    border-color: rgba(201, 169, 110, 0.35);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Image Wrapper ---- */
+.item-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #2D1A0F, #4A2C1A);
+}
+
+.item-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.item-card:hover .item-thumb {
+    transform: scale(1.07);
+}
+
+/* Gradient overlay over image */
+.item-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 14, 8, 0.72) 0%, rgba(26, 14, 8, 0.12) 50%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Badge floating on image */
+.item-img-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 5;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    backdrop-filter: blur(8px);
+}
+
+/* Placeholder if image fails */
+.item-thumb-placeholder {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #2D1A0F, #4A2C1A);
+}
+
+/* ---- Item Body ---- */
+.item-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #F5EDD8;
+    margin-bottom: 2px;
+    direction: rtl;
+    text-align: right;
+}
+
+.item-name-en {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(201, 169, 110, 0.55);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.item-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(245, 237, 216, 0.55);
+    line-height: 1.55;
+    margin-bottom: 10px;
+    direction: rtl;
+    text-align: right;
+}
+
+/* Ingredients row */
+.item-ingredients {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(245, 237, 216, 0.38);
+    line-height: 1.55;
+    margin-bottom: 14px;
+    padding: 8px 12px 8px 10px;
+    background: rgba(201, 169, 110, 0.05);
+    border-right: 2px solid rgba(201, 169, 110, 0.25);
+    border-radius: 8px 0 0 8px;
+    direction: rtl;
+    text-align: right;
+}
+
+.item-ingredients i {
+    margin-left: 5px;
+}
+
+/* Price + Badge row */
+.item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.item-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #C9A96E;
+}
+
+.item-price-currency {
+    font-size: 0.72rem;
+    font-family: 'Inter', sans-serif;
+    color: rgba(201, 169, 110, 0.65);
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+/* ---- Badges ---- */
+.item-badge,
+.item-img-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.badge-hot {
+    background: rgba(220, 80, 40, 0.18);
+    color: #fca5a5;
+    border: 1px solid rgba(220, 80, 40, 0.3);
+}
+
+.badge-cold {
+    background: rgba(56, 150, 220, 0.18);
+    color: #93c5fd;
+    border: 1px solid rgba(56, 150, 220, 0.3);
+}
+
+.badge-popular {
+    background: rgba(201, 169, 110, 0.18);
+    color: #E8C97A;
+    border: 1px solid rgba(201, 169, 110, 0.4);
+}
+
+.badge-new {
+    background: rgba(52, 211, 153, 0.18);
+    color: #6ee7b7;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+/* ---- Empty / Count ---- */
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: rgba(245, 237, 216, 0.4);
+    font-family: 'Inter', sans-serif;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    color: rgba(201, 169, 110, 0.3);
+    margin-bottom: 16px;
+}
+
+#item-count {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(245, 237, 216, 0.4);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+    .category-tabs {
+        top: 60px;
+        gap: 8px;
+        padding: 14px 10px;
+    }
+
+    .cat-tab {
+        padding: 7px 13px;
+        font-size: 0.78rem;
+    }
+
+    .menu-items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+    }
+
+    .item-img-wrap {
+        height: 180px;
+    }
+}

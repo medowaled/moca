@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Mocha Cafe – A premium cafe experience with specialty coffee, shisha, desserts, and more. Visit us for an unforgettable ambiance." />
+  <title>Mocha Cafe | Premium Coffee & Lounge Experience</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mocha: {
+              dark: '#1A0E08',
+              deep: '#2D1A0F',
+              brown: '#4A2C1A',
+              medium: '#6B3D2A',
+              warm: '#8B5A3A',
+              gold: '#C9A96E',
+              golden: '#E8C97A',
+              cream: '#F5EDD8',
+              light: '#FAF6EE',
+              text: '#2D1A0F',
+            }
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            inter: ['Inter', 'sans-serif'],
+            cormorant: ['Cormorant Garamond', 'serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite',
+            'shimmer': 'shimmer 2s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-mocha-dark text-mocha-cream overflow-x-hidden">
+
+  <!-- Custom Cursor -->
+  <div id="cursor" class="custom-cursor"></div>
+  <div id="cursor-trail" class="cursor-trail"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="logo-wrap flex items-center gap-3 group">
+        <img src="images/logo moca.jpg" alt="Mocha Cafe Logo"
+          class="w-12 h-12 rounded-full object-cover shadow-lg group-hover:scale-110 transition-transform duration-300 border border-mocha-gold/30">
+        <span class="font-playfair text-2xl font-700 text-mocha-golden tracking-wide">Moca <span
+            class="text-mocha-cream font-300">Cafe</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="hidden md:flex items-center gap-8 font-inter text-sm font-500 text-mocha-cream/80">
+        <li><a href="#hero" class="nav-link hover:text-mocha-golden transition-colors duration-300">Home</a></li>
+        <li><a href="#menu" class="nav-link hover:text-mocha-golden transition-colors duration-300">Menu</a></li>
+        <li><a href="#about" class="nav-link hover:text-mocha-golden transition-colors duration-300">About</a></li>
+        <li><a href="#testimonials" class="nav-link hover:text-mocha-golden transition-colors duration-300">Reviews</a>
+        </li>
+        <li><a href="#contact" class="nav-link hover:text-mocha-golden transition-colors duration-300">Contact</a></li>
+      </ul>
+
+      <!-- Reserve Button -->
+      <a href="#contact"
+        class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full border border-mocha-gold text-mocha-gold text-sm font-inter font-500 hover:bg-mocha-gold hover:text-mocha-dark transition-all duration-300 reserve-btn">
+        <i class="fa-regular fa-calendar-check text-xs"></i>
+        Reserve a Table
+      </a>
+
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="md:hidden text-mocha-golden text-2xl focus:outline-none" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-mocha-deep/95 backdrop-blur-md border-t border-mocha-gold/20 px-6 py-6 space-y-4">
+      <a href="#hero"
+        class="mobile-nav-link block py-2 text-mocha-cream hover:text-mocha-golden font-inter transition-colors duration-200">Home</a>
+      <a href="#menu"
+        class="mobile-nav-link block py-2 text-mocha-cream hover:text-mocha-golden font-inter transition-colors duration-200">Menu</a>
+      <a href="#about"
+        class="mobile-nav-link block py-2 text-mocha-cream hover:text-mocha-golden font-inter transition-colors duration-200">About</a>
+      <a href="#testimonials"
+        class="mobile-nav-link block py-2 text-mocha-cream hover:text-mocha-golden font-inter transition-colors duration-200">Reviews</a>
+      <a href="#contact"
+        class="mobile-nav-link block py-2 text-mocha-cream hover:text-mocha-golden font-inter transition-colors duration-200">Contact</a>
+      <a href="#contact"
+        class="block mt-4 px-6 py-3 text-center rounded-full bg-mocha-gold text-mocha-dark font-inter font-600 text-sm">Reserve
+        a Table</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="relative h-screen min-h-[600px] overflow-hidden">
+    <!-- Slides -->
+    <div id="hero-slider" class="hero-slider">
+      <div class="slide active"
+        style="background-image: url('images/634672766_122109899901225091_5217118223361733120_n.jpg')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content text-right items-end" dir="rtl">
+          <span class="slide-tagline reveal-up">أهلاً بكم في عالم التميز</span>
+          <h1 class="slide-title reveal-up delay-100">حيث تروي كل رشفة<br /><em>قصة</em> فريدة</h1>
+          <p class="slide-desc reveal-up delay-200">خطوة نحو عالم من الدفء، النكهة، والفخامة. موكا كافيه — بيتك الثاني.
+          </p>
+          <div class="slide-actions reveal-up delay-300">
+            <a href="#menu" class="btn-primary">استكشف القائمة</a>
+            <a href="#about" class="btn-ghost">قصتنا</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('images/hero2.png')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content text-right items-end" dir="rtl">
+          <span class="slide-tagline reveal-up">صُنع بشغف</span>
+          <h1 class="slide-title reveal-up delay-100">قهوة مختصة،<br />بلمسة <em>إتقان</em> يومية</h1>
+          <p class="slide-desc reveal-up delay-200">من الإسبريسو الفاخر إلى خلطاتنا الحصرية — كل كوب هو لوحة فنية صُممت
+            خصيصاً لك.</p>
+          <div class="slide-actions reveal-up delay-300">
+            <a href="menu.html?cat=hot-drinks" class="btn-primary">مشروبات ساخنة</a>
+            <a href="menu.html?cat=cold-drinks" class="btn-ghost">مشروبات باردة</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('images/hero3.png')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content text-right items-end" dir="rtl">
+          <span class="slide-tagline reveal-up">لاونج فاخر</span>
+          <h1 class="slide-title reveal-up delay-100">استمتع بأجواء<br />الشيشة <em>الفاخرة</em></h1>
+          <p class="slide-desc reveal-up delay-200">ارتقِ بأمسياتك مع تشكيلتنا المختارة من الشيشة في أجواء من الفخامة
+            المطلقة.</p>
+          <div class="slide-actions reveal-up delay-300">
+            <a href="menu.html?cat=shisha" class="btn-primary">قائمة الشيشة</a>
+            <a href="#contact" class="btn-ghost">احجز طاولتك</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <button id="prev-slide" class="slider-btn slider-btn-prev" aria-label="Previous slide">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="next-slide" class="slider-btn slider-btn-next" aria-label="Next slide">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Slider Dots -->
+    <div class="slider-dots" id="slider-dots">
+      <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="dot" data-index="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span class="font-inter text-xs text-mocha-cream/50 tracking-widest uppercase">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== MENU SECTION ===== -->
+  <section id="menu" class="py-24 px-4 relative overflow-hidden">
+    <!-- Background decorative -->
+    <div class="absolute inset-0 bg-gradient-to-b from-mocha-dark via-mocha-deep to-mocha-dark opacity-80"></div>
+    <div class="grain-overlay"></div>
+
+    <div class="relative max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal-up">
+        <span class="section-tag">Our Offerings</span>
+        <h2 class="section-title">A World of <em>Flavors</em></h2>
+        <p class="section-subtitle">Choose your indulgence — from artisan coffee to premium shisha, desserts and beyond.
+        </p>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Category Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        <!-- Hot Drinks -->
+        <a href="menu.html?cat=hot-drinks" id="cat-hot" class="menu-card reveal-up delay-100"
+          data-category="hot-drinks">
+          <div class="menu-card-img" style="background-image: url('images/hot_drinks.png')">
+            <div class="menu-card-overlay"></div>
+            <div class="menu-card-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">مشروبات ساخنة</h3>
+            <p class="menu-card-desc">إسبريسو، أمريكانو، كابتشينو، لاتيه والمزيد</p>
+            <span class="menu-card-cta">استكشف <i class="fa-solid fa-arrow-left text-xs ml-1"></i></span>
+          </div>
+        </a>
+
+        <!-- Cold Drinks -->
+        <a href="menu.html?cat=cold-drinks" id="cat-cold" class="menu-card reveal-up delay-150"
+          data-category="cold-drinks">
+          <div class="menu-card-img" style="background-image: url('images/cold_drinks.png')">
+            <div class="menu-card-overlay"></div>
+            <div class="menu-card-icon"><i class="fa-solid fa-wine-glass"></i></div>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">مشروبات باردة</h3>
+            <p class="menu-card-desc">قهوة مثلجة، كولد برو، فرابتشينو والمزيد</p>
+            <span class="menu-card-cta">استكشف <i class="fa-solid fa-arrow-left text-xs ml-1"></i></span>
+          </div>
+        </a>
+
+        <!-- Shisha -->
+        <a href="menu.html?cat=shisha" id="cat-shisha" class="menu-card reveal-up delay-200" data-category="shisha">
+          <div class="menu-card-img shisha-bg"
+            style="background-image: url('images/hero3.png'); background-position: bottom center;">
+            <div class="menu-card-overlay"></div>
+            <div class="menu-card-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">شيشة</h3>
+            <p class="menu-card-desc">نكهات مميزة، تجربة فاخرة، في كل مرة</p>
+            <span class="menu-card-cta">استكشف <i class="fa-solid fa-arrow-left text-xs ml-1"></i></span>
+          </div>
+        </a>
+
+        <!-- Desserts -->
+        <a href="menu.html?cat=desserts" id="cat-desserts" class="menu-card reveal-up delay-250"
+          data-category="desserts">
+          <div class="menu-card-img" style="background-image: url('images/desserts.png')">
+            <div class="menu-card-overlay"></div>
+            <div class="menu-card-icon"><i class="fa-solid fa-cake-candles"></i></div>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">حلويات</h3>
+            <p class="menu-card-desc">تشيز كيك، وافل، براونيز وحلويات مبتكرة</p>
+            <span class="menu-card-cta">استكشف <i class="fa-solid fa-arrow-left text-xs ml-1"></i></span>
+          </div>
+        </a>
+
+        <!-- Birthdays & Events -->
+        <a href="menu.html?cat=events" id="cat-events" class="menu-card reveal-up delay-300" data-category="events">
+          <div class="menu-card-img events-bg"
+            style="background-image: url('images/Gemini_Generated_Image_ben7eyben7eyben7.png'); background-position: center;">
+            <div class="menu-card-overlay"></div>
+            <div class="menu-card-icon text-mocha-golden"><i class="fa-solid fa-champagne-glasses"></i></div>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">أعياد الميلاد والمناسبات</h3>
+            <p class="menu-card-desc">باقات مخصصة لاحتفالات لا تُنسى ولحظات مميزة.</p>
+            <span class="menu-card-cta">استكشف <i class="fa-solid fa-arrow-left text-xs ml-1"></i></span>
+          </div>
+        </a>
+
+        <!-- Ice -->
+        <a href="menu.html?cat=ice" id="cat-ice" class="menu-card reveal-up delay-350" data-category="ice">
+          <div class="menu-card-img ice-bg" style="background-image: url('images/1.png'); background-position: center;">
+            <div class="menu-card-overlay"></div>
+            <div class="menu-card-icon text-mocha-golden"><i class="fa-regular fa-snowflake"></i></div>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">آيس كريم ومثلجات</h3>
+            <p class="menu-card-desc">آيس كريم فاخر، سوربيه، وحلويات مثلجة تناسب كل الأذواق.</p>
+            <span class="menu-card-cta">استكشف <i class="fa-solid fa-arrow-left text-xs ml-1"></i></span>
+          </div>
+        </a>
+
+        <!-- Mojito -->
+        <a href="menu.html?cat=mojito" id="cat-mojito" class="menu-card reveal-up delay-400" data-category="mojito">
+          <div class="menu-card-img mojito-bg"
+            style="background-image: url('images/2.png'); background-position: center;">
+            <div class="menu-card-overlay"></div>
+            <div class="menu-card-icon text-mocha-golden"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">موهيتو</h3>
+            <p class="menu-card-desc">نعناع طازج، حمضيات، وخلطات "موكتيل" محضرة يدوياً.</p>
+            <span class="menu-card-cta">استكشف <i class="fa-solid fa-arrow-left text-xs ml-1"></i></span>
+          </div>
+        </a>
+
+        <!-- View Full Menu CTA Card -->
+        <a href="menu.html" class="menu-card menu-card-cta-card reveal-up delay-450">
+          <div class="menu-card-full-cta">
+            <div class="cta-ring"></div>
+            <i class="fa-solid fa-book-open text-4xl text-mocha-golden mb-4"></i>
+            <h3 class="font-playfair text-xl text-mocha-golden font-600 mb-2">القائمة الكاملة</h3>
+            <p class="font-inter text-sm text-mocha-cream/60 mb-4">استكشف كل ما نقدمه في موكا كافيه</p>
+            <span
+              class="px-6 py-2 rounded-full border border-mocha-gold text-mocha-gold text-sm font-inter hover:bg-mocha-gold hover:text-mocha-dark transition-all duration-300">مشاهدة
+              الكل</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="py-24 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 about-bg"></div>
+    <div class="grain-overlay"></div>
+
+    <div class="relative max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left - Visual -->
+        <div class="reveal-left">
+          <div class="about-visual-wrap">
+            <div class="about-img-main" style="background-image: url('images/hero1.png')">
+              <div class="about-img-overlay"></div>
+            </div>
+            <div class="about-img-accent" style="background-image: url('images/hero2.png')">
+              <div class="about-img-overlay"></div>
+            </div>
+            <!-- Floating stat cards -->
+            <div class="stat-card stat-card-1">
+              <span class="stat-number">+٥</span>
+              <span class="stat-label">سنوات من التميز</span>
+            </div>
+            <div class="stat-card stat-card-2">
+              <span class="stat-number">+١٠ آلاف</span>
+              <span class="stat-label">ضيف سعيد</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right - Story -->
+        <div class="reveal-right text-right" dir="rtl">
+          <span class="section-tag">قصتنا</span>
+          <h2 class="section-title text-right mb-6">وُلدنا من شغف<br />بثقافة <em>القهوة</em></h2>
+
+          <div class="space-y-5 font-inter text-mocha-cream/80 leading-relaxed text-base">
+            <p>
+              وُلد موكا كافيه من حلم بسيط لكنه قوي - خلق مساحة يشعر فيها كل ضيف وكأنه ملك. تأسسنا بشغف وهوس بالجودة،
+              وانطلقنا لإعادة تعريف تجربة المقهى في مجتمعنا.
+            </p>
+            <p>
+              تصور مؤسسونا مكاناً يمزج بين دفء المنزل ورقي اللاونج الفاخر. مكان تتدفق فيه المحادثات بحرية، حيث تمتزج
+              رائحة القهوة الطازجة بالضحك والموسيقى.
+            </p>
+            <p>
+              اليوم، يقف موكا كافيه شاهداً على تلك الرؤية - ملاذاً لعشاق القهوة، ومحبي الشيشة، والباحثين عن لحظة من
+              الدلال الخالص.
+            </p>
+          </div>
+
+          <!-- Values -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+              <h4 class="value-title">الجودة أولاً</h4>
+              <p class="value-desc">أرقى المكونات في كل ابتكار</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+              <h4 class="value-title">صُنع بكل حب</h4>
+              <p class="value-desc">كل صنف يُصنع بعناية وتفانٍ</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-star"></i></div>
+              <h4 class="value-title">لمسة فخامة</h4>
+              <p class="value-desc">أجواء ترتقي بكل زيارة لك</p>
+            </div>
+          </div>
+
+          <a href="#menu" class="mt-10 inline-flex items-center gap-3 btn-primary">
+            اكتشف قائمتنا <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS STRIP ===== -->
+  <section class="py-16 px-4 relative overflow-hidden stats-strip">
+    <div class="grain-overlay"></div>
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal-up">
+      <div class="stats-item">
+        <span class="stats-num" data-target="5000">0</span>
+        <span class="stats-plus">+</span>
+        <p class="stats-label">Cups Served Monthly</p>
+      </div>
+      <div class="stats-item">
+        <span class="stats-num" data-target="30">0</span>
+        <span class="stats-plus">+</span>
+        <p class="stats-label">Shisha Flavors</p>
+      </div>
+      <div class="stats-item">
+        <span class="stats-num" data-target="50">0</span>
+        <span class="stats-plus">+</span>
+        <p class="stats-label">Menu Items</p>
+      </div>
+      <div class="stats-item">
+        <span class="stats-num" data-target="10000">0</span>
+        <span class="stats-plus">+</span>
+        <p class="stats-label">Happy Customers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS SECTION ===== -->
+  <section id="testimonials" class="py-24 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-mocha-dark via-mocha-deep to-mocha-dark opacity-90"></div>
+    <div class="grain-overlay"></div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <div class="text-center mb-16 reveal-up">
+        <span class="section-tag">آراء ضيوفنا</span>
+        <h2 class="section-title">ماذا يقول <em>ضيوفنا</em> عنّا</h2>
+        <p class="section-subtitle">كلمات حقيقية من أشخاص حقيقيين عاشوا تجربة موكا الفريدة.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Testimonial Slider -->
+      <div class="testimonial-slider reveal-up" id="testimonial-slider">
+        <div class="testimonial-track" id="testimonial-track">
+
+          <div class="testimonial-card text-right" dir="rtl">
+            <div class="testimonial-quote-icon flex justify-end"><i class="fa-solid fa-quote-right"></i></div>
+            <div class="testimonial-stars flex justify-end">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"بصراحة، هذه أفضل تجربة مقهى مررت بها على الإطلاق. الأجواء ساحرة حقاً - وكأنك
+              تخطو داخل حلم. القهوة ممتازة والشيشة من أعلى طراز."</p>
+            <div class="testimonial-author flex flex-row-reverse gap-4">
+              <div class="author-avatar shrink-0">م</div>
+              <div>
+                <p class="author-name">محمد كريم</p>
+                <p class="author-role">ضيف دائم</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card text-right" dir="rtl">
+            <div class="testimonial-quote-icon flex justify-end"><i class="fa-solid fa-quote-right"></i></div>
+            <div class="testimonial-stars flex justify-end">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"احتفلنا بعيد ميلادي في موكا كافيه وكانت تجربة لا تُنسى حقاً! الفريق بذل قصارى
+              جهده لتكون الليلة مميزة. الديكورات، الكيكة الخاصة، والخدمة.. كل شيء كان مثالياً!"</p>
+            <div class="testimonial-author flex flex-row-reverse gap-4">
+              <div class="author-avatar shrink-0">س</div>
+              <div>
+                <p class="author-name">سارة حسن</p>
+                <p class="author-role">احتفال بعيد ميلاد</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card text-right" dir="rtl">
+            <div class="testimonial-quote-icon flex justify-end"><i class="fa-solid fa-quote-right"></i></div>
+            <div class="testimonial-stars flex justify-end">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="testimonial-text">"الكولد برو مع كيكة الشوكولاتة لافا.. مزيج يجعلني أعود دائماً. الأجواء هنا لا
+              تُضاهى، وفريق العمل دائماً ودود ومرحب."</p>
+            <div class="testimonial-author flex flex-row-reverse gap-4">
+              <div class="author-avatar shrink-0">ع</div>
+              <div>
+                <p class="author-name">عمر نبيل</p>
+                <p class="author-role">محب للقهوة</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card text-right" dir="rtl">
+            <div class="testimonial-quote-icon flex justify-end"><i class="fa-solid fa-quote-right"></i></div>
+            <div class="testimonial-stars flex justify-end">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"جئت من أجل الموهيتو وبقيت من أجل التجربة بأكملها. موهيتو النعناع منعش جداً
+              والتصميم الداخلي يستحق التصوير للنشر على إنستجرام. أزوره كل أسبوع!"</p>
+            <div class="testimonial-author flex flex-row-reverse gap-4">
+              <div class="author-avatar shrink-0">ن</div>
+              <div>
+                <p class="author-name">نور أحمد</p>
+                <p class="author-role">بلوجر نمط حياة</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card text-right" dir="rtl">
+            <div class="testimonial-quote-icon flex justify-end"><i class="fa-solid fa-quote-right"></i></div>
+            <div class="testimonial-stars flex justify-end">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"مقهى راقٍ يفهم حقاً معنى الفخامة. كل التفاصيل - من الإضاءة إلى القائمة - صُممت
+              بعناية واهتمام. مكاني المفضل لكل المناسبات."</p>
+            <div class="testimonial-author flex flex-row-reverse gap-4">
+              <div class="author-avatar shrink-0">ي</div>
+              <div>
+                <p class="author-name">ياسمين علي</p>
+                <p class="author-role">عضو VIP</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Testimonial Controls -->
+      <div class="testimonial-controls">
+        <button id="t-prev" class="t-btn" aria-label="Previous review"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="t-dots" id="t-dots">
+          <button class="t-dot active" data-index="0" aria-label="Review 1"></button>
+          <button class="t-dot" data-index="1" aria-label="Review 2"></button>
+          <button class="t-dot" data-index="2" aria-label="Review 3"></button>
+          <button class="t-dot" data-index="3" aria-label="Review 4"></button>
+          <button class="t-dot" data-index="4" aria-label="Review 5"></button>
+        </div>
+        <button id="t-next" class="t-btn" aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="py-24 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 contact-bg"></div>
+    <div class="grain-overlay"></div>
+
+    <div class="relative max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal-up">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Find <em>Us</em></h2>
+        <p class="section-subtitle">We'd love to hear from you. Come visit us or reach out anytime.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Contact Cards -->
+        <div class="contact-card reveal-up delay-100">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <h4 class="contact-card-title">Our Location</h4>
+          <p class="contact-card-text">موكا كافيه <br />قليوب الحمطه امام مستشفي قليوب التخصصي <br />برج الرضوان الدور
+            الاول علوي </p>
+        </div>
+        <div class="contact-card reveal-up delay-200">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <h4 class="contact-card-title">Call Us</h4>
+          <p class="contact-card-text">
+            <a href="tel:+201234567890" class="hover:text-mocha-golden transition-colors">+20 1064006635</a><br />
+            <a href="tel:+201098765432" class="hover:text-mocha-golden transition-colors">+20 1005331040</a>
+          </p>
+        </div>
+        <div class="contact-card reveal-up delay-300">
+          <div class="contact-icon"><i class="fa-regular fa-clock"></i></div>
+          <h4 class="contact-card-title">Opening Hours</h4>
+          <p class="contact-card-text">
+            مفتوح دائما لخدمتكم
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="relative pt-16 pb-8 px-4 overflow-hidden">
+    <div class="absolute inset-0 footer-bg"></div>
+    <div class="grain-overlay"></div>
+
+    <div class="relative max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-mocha-gold/20">
+
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <a href="index.html" class="flex items-center gap-3 mb-5 group">
+            <img src="images/logo moca.jpg" alt="Mocha Cafe Logo"
+              class="w-12 h-12 rounded-full object-cover shadow-lg group-hover:scale-110 transition-transform duration-300 border border-mocha-gold/30">
+            <span class="font-playfair text-2xl font-700 text-mocha-golden">Moca <span
+                class="text-mocha-cream font-300">Cafe</span></span>
+          </a>
+          <p class="font-inter text-sm text-mocha-cream/60 leading-relaxed mb-6">
+            موكا كافيه، مكانٌ تتحول فيه كل زيارة إلى ذكرى عزيزة. جودة ممتازة، أجواء دافئة، ونكهات لا تُنسى.
+          </p>
+          <!-- Social -->
+          <div class="flex items-center gap-4">
+            <a href="https://www.facebook.com/MOCACAFE" class="social-icon" aria-label="Facebook" target="_blank"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/201064006635" class="social-icon" aria-label="WhatsApp" target="_blank"><i
+                class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="space-y-3">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#menu" class="footer-link">Our Menu</a></li>
+            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#testimonials" class="footer-link">Guest Reviews</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Menu Categories -->
+        <div>
+          <h5 class="footer-heading">Menu</h5>
+          <ul class="space-y-3">
+            <li><a href="menu.html?cat=hot-drinks" class="footer-link">Hot Drinks</a></li>
+            <li><a href="menu.html?cat=cold-drinks" class="footer-link">Cold Drinks</a></li>
+            <li><a href="menu.html?cat=shisha" class="footer-link">Shisha</a></li>
+            <li><a href="menu.html?cat=desserts" class="footer-link">Desserts</a></li>
+            <li><a href="menu.html?cat=mojito" class="footer-link">Mojito</a></li>
+            <li><a href="menu.html?cat=ice" class="footer-link">Ice & More</a></li>
+            <li><a href="menu.html?cat=events" class="footer-link">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h5 class="footer-heading">Contact</h5>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-sm font-inter text-mocha-cream/60">
+              <i class="fa-solid fa-location-dot text-mocha-gold mt-0.5 shrink-0"></i>
+              موكا كافيه قليوب الحمطه امام مستشفي قليوب التخصصي برج الرضوان الدورالاول علوي
+            </li>
+            <li class="flex items-center gap-3 text-sm font-inter text-mocha-cream/60">
+              <i class="fa-solid fa-phone text-mocha-gold shrink-0"></i>
+              <a href="tel:+201234567890" class="hover:text-mocha-golden transition-colors">+20 1064006635</a>
+            </li>
+            <li class="flex items-center gap-3 text-sm font-inter text-mocha-cream/60">
+              <i class="fa-solid fa-phone text-mocha-gold shrink-0"></i>
+              <a href="tel:+201098765432" class="hover:text-mocha-golden transition-colors">+20 1005331040</a>
+            </li>
+            <li class="flex items-center gap-3 text-sm font-inter text-mocha-cream/60">
+              <i class="fa-brands fa-whatsapp text-mocha-gold shrink-0"></i>
+              <a href="https://wa.me/201064006635" target="_blank"
+                class="hover:text-mocha-golden transition-colors">WhatsApp Us</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+        <p class="font-inter text-xs text-mocha-cream/40">
+          &copy; 2025 Mocha Cafe. All rights reserved.
+        </p>
+        <p class="font-inter text-xs text-mocha-cream/40">
+          Created with <span class="text-red-400">♥</span> by
+          <a href="https://wa.me/201202021982" target="_blank"
+            class="text-mocha-golden hover:text-mocha-gold underline underline-offset-2 transition-colors">Eng. Ahmed
+            Walid</a>
+          &amp;
+          <a href="https://wa.me/201095412229" target="_blank"
+            class="text-mocha-golden hover:text-mocha-gold underline underline-offset-2 transition-colors">Eng. Islam
+            Saad</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

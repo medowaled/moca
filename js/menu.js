@@ -153,6 +153,24 @@ const menuData = {
                 badge: 'popular',
                 img: 'images/16.png'
             },
+             {
+                name: 'سحلب شوكليت وايت مكس ',
+                price: '75',
+                badge: 'popular',
+                img: 'images/16.png'
+            },
+            {
+                name: 'سحلب مكس فوكه',
+                price: '85',
+                badge: 'popular',
+                img: 'images/16.png'
+            },
+            {
+                name: 'سحلب شوكليت وايت مكس ',
+                price: '75',
+                badge: 'popular',
+                img: 'images/16.png'
+            },
             {
                 name: 'شاي براد ',
                 price: '45',
@@ -164,6 +182,12 @@ const menuData = {
                 price: '45',
                 badge: 'popular',
                 img: 'images/47.jpg'
+            },
+            {
+                name: 'فولو كوكتيل ',
+                price: '45',
+                badge: 'popular',
+                img: 'images/00.1.jpg'
             },
 
         ]
@@ -355,6 +379,12 @@ const menuData = {
                 badge: 'popular',
                 img: 'images/45.jpg'
             },
+            {
+                name: 'همر هيد ',
+                price: '100',
+                badge: 'popular',
+                img: 'images/45.jpg'
+            },
 
 
         ]
@@ -453,6 +483,42 @@ const menuData = {
                 badge: 'popular',
                 img: 'images/1.12.jpg'
             },
+            {
+                name: 'بطيخ نعناع ',
+
+                price: '65',
+                badge: 'popular',
+                img: 'images/22.1.jpg'
+            },
+            {
+                name: 'موز شوكلت ',
+
+                price: '70',
+                badge: 'popular',
+                img: 'images/22.2.jpg'
+            },
+            {
+                name: 'موهيتو مانجو ',
+
+                price: '75',
+                badge: 'popular',
+                img: 'images/22.3.jpg'
+            },
+            {
+                name: 'موهيتو كيوي ',
+
+                price: '75',
+                badge: 'popular',
+                img: 'images/22.4.jpg'
+            },
+            {
+                name: 'موهيتو اناناس ',
+
+                price: '75',
+                badge: 'popular',
+                img: 'images/22.5.jpg'
+            },
+
 
         ]
     },
@@ -559,6 +625,24 @@ const menuData = {
                 badge: 'popular',
                 img: 'images/2.10.jpg'
             },
+            {
+                name: 'بنانا شوكليت  ',
+                price: '50',
+                badge: 'popular',
+                img: 'images/2.10.jpg'
+            },
+            {
+                name: 'براونيز ايس فانيلا ',
+                price: '60',
+                badge: 'popular',
+                img: 'images/2.10.jpg'
+            },
+            {
+                name: 'شوكليت فادج  ',
+                price: '80',
+                badge: 'popular',
+                img: 'images/2.10.jpg'
+            },
         ]
     },
     'COCKTAIL': {
@@ -569,7 +653,7 @@ const menuData = {
         items: [
             {
                 name: 'بينا كولاد1',
-                price: '70',
+                price: '75',
                 badge: 'popular',
                 img: 'images/3.1.jpg'
             },
@@ -596,6 +680,30 @@ const menuData = {
                 price: '100',
                 badge: 'popular',
                 img: 'images/3.5.jpg'
+            },
+            {
+                name: 'افريكانو كوكتيل ',
+                price: '90',
+                badge: 'popular',
+                img: 'images/33.1.jpg'
+            },
+            {
+                name: 'سوبر باور كوكتيل ',
+                price: '100',
+                badge: 'popular',
+                img: 'images/33.2.jpg'
+            },
+            {
+                name: 'انيرجي كوكتيل ',
+                price: '80',
+                badge: 'popular',
+                img: 'images/33.3.jpg'
+            },
+            {
+                name: 'فياجرا كوكتيل ',
+                price: '100',
+                badge: 'popular',
+                img: 'images/33.4.jpg'
             },
         ]
     },
@@ -1169,6 +1277,36 @@ const menuData = {
                 badge: 'popular',
                 img: 'images/8.11.jpg'
             },
+            {
+                name: 'مليك شيك  مكس بري فراوله ',
+                price: '80',
+                badge: 'popular',
+                img: 'images/11.1.jpg'
+            },
+            {
+                name: 'مليك شيك اناناس ',
+                price: '75',
+                badge: 'popular',
+                img: 'images/11.2.jpg'
+            },
+            {
+                name: 'مليك شيك  فراوله كوفي ',
+                price: '85',
+                badge: 'popular',
+                img: 'images/11.3.jpg'
+            },
+            {
+                name: 'مليك شيك مانجو كوفي ',
+                price: '85',
+                badge: 'popular',
+                img: 'images/11.4.jpg'
+            },
+            {
+                name: 'مليك شيك موكا',
+                price: '110',
+                badge: 'popular',
+                img: 'images/11.5.jpg'
+            },
         ]
     },
 
@@ -1242,6 +1380,85 @@ const menuData = {
                 badge: 'popular',
                 img: 'images/9.9.jpg'
             },
+             {
+                name: 'فراوله كوفي',
+                price: '75',
+                badge: 'popular',
+                img: 'images/00.2.jpg'
+            },
+             {
+                name: 'مانجو كوفي ',
+                price: '75',
+                badge: 'popular',
+                img: 'images/00.3.jpg'
+            },
+             {
+                name: 'بينك ليمون ',
+                price: '75',
+                badge: 'popular',
+                img: 'images/00.4.jpg'
+            },
+             {
+                name: 'بلو ليمون',
+                price: '75',
+                badge: 'popular',
+                img: 'images/00.5.jpg'
+            },
+             {
+                name: 'زبادي كلاسيك  ',
+                price: '40',
+                badge: 'popular',
+                img: 'images/00.6.jpg'
+            },
+            {
+                name: 'زبادي مانجو  ',
+                price: '55',
+                badge: 'popular',
+                img: 'images/00.7.jpg'
+            },
+            {
+                name: 'زبادي فراوله  ',
+                price: '55',
+                badge: 'popular',
+                img: 'images/00.8.jpg'
+            },
+            {
+                name: 'زبادي بلو بري ',
+                price: '55',
+                badge: 'popular',
+                img: 'images/00.9.jpg'
+            },
+            {
+                name: 'زبادي مكس  ',
+                price: '60',
+                badge: 'popular',
+                img: 'images/00.10.jpg'
+            },
+            {
+                name: 'زبادي موز  ',
+                price: '60',
+                badge: 'popular',
+                img: 'images/00.11.jpg'
+            },
+            {
+                name: 'زبادي عسل  ',
+                price: '45',
+                badge: 'popular',
+                img: 'images/00.12.jpg'
+            },
+            {
+                name: 'زبادي عسل مكسرات  ',
+                price: '55',
+                badge: 'popular',
+                img: 'images/00.13.jpg'
+            },
+            {
+                name: 'زبادي باشون  ',
+                price: '55',
+                badge: 'popular',
+                img: 'images/00.14.jpg'
+            },
+
 
 
         ]
